@@ -1,17 +1,12 @@
 package TestCases;
 
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+import Base.CommenToAllTestCases;
+import DriverManager.DriverManager;
 import org.testng.annotations.Test;
 
-public class FirstTestCase {
-
+public class FirstTestCase extends CommenToAllTestCases {
     @Test
-    public void testCase() throws InterruptedException {
-        WebDriver driver = new ChromeDriver();
-        driver.get("https://demoqa.com");
-
-
-
+    public void testCase() {
+        DriverManager.getDriver().get("https://demoqa.com");
     }
 }
