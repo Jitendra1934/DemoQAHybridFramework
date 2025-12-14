@@ -2,6 +2,7 @@ package DriverManager;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
@@ -20,7 +21,17 @@ public class DriverManager {
         if (driver.get() == null) {
             switch (browser.toLowerCase()) {
                 case "chrome": {
-                    WebDriver driver1 = new ChromeDriver();
+
+                    ChromeOptions options = new ChromeOptions();
+                    options.addArguments("--disable-notifications");
+                    options.addArguments("--disable-geolocation");
+                    options.addArguments("--disable-infobars");
+                    options.addArguments("--disable-extensions");
+                    options.addArguments("--disable-popup-blocking");
+                    options.addArguments("--disable-ads");
+                    options.addArguments("--disable-gpu");
+                    options.addArguments("--start-maximized");
+                    WebDriver driver1 = new ChromeDriver(options);
                     setDriver(driver1);
                     break;
                 }
