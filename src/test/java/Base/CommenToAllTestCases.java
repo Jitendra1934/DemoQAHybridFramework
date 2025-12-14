@@ -1,19 +1,16 @@
 package Base;
 
 import DriverManager.DriverManager;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Optional;
-import org.testng.annotations.Parameters;
+import org.testng.annotations.*;
 
 public class CommenToAllTestCases {
-    @BeforeTest
+    @BeforeMethod
     @Parameters({"browser"})
     public static void setUP(@Optional("chrome") String browser) {
         DriverManager.setUp(browser);
     }
 
-    @AfterTest
+    @AfterMethod
     public static void setDown() {
         DriverManager.setDown();
     }
