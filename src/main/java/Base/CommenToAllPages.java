@@ -19,5 +19,9 @@ public class CommenToAllPages {
         wait.until(ExpectedConditions.visibilityOfElementLocated(by)).sendKeys(text);
     }
 
+    public String getText(By by){
+        WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(20));
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(by)).getText();
+    }
 
 }
