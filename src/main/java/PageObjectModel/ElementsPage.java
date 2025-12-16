@@ -20,6 +20,4 @@ public class ElementsPage extends CommenToAllPages {
     public void clickTextBox(){
         visibilityOfElement(textBox);
     }
-
-
 }
