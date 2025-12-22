@@ -12,6 +12,7 @@ public class CommenToAllTestCases {
 
     @AfterMethod
     public static void setDown() {
+
         DriverManager.setDown();
     }
 }

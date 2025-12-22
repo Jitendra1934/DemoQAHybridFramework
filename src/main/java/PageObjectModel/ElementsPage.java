@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 
 public class ElementsPage extends CommenToAllPages {
 
-    static WebDriver driver;
+     WebDriver driver;
 
     public ElementsPage(WebDriver driver) {
         this.driver = driver;
@@ -18,6 +18,6 @@ public class ElementsPage extends CommenToAllPages {
     //Page Actions
 
     public void clickTextBox(){
-        visibilityOfElement(textBox);
+        click(textBox);
     }
 }

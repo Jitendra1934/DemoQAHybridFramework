@@ -1,15 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite">
-    <listeners>
-        <listener class-name="Listener.TestListener"/>
-    </listeners>
+
     <test verbose="2" preserve-order="true" name="C:/Users/hp/IdeaProjects/DemoQAHybridFramework/src/test">
         <classes>
+            <class name="TestCases.Elements.ClickLinkElement">
+                <methods>
+                    <include name="clicklink"/>
+                </methods>
+            </class>
+            <class name="TestCases.Elements.Btn">
+                <methods>
+                    <include name="doubleClick"/>
+                    <include name="rightClick"/>
+                    <include name="click"/>
+                </methods>
+            </class>
             <class name="TestCases.Elements.ElementsTestCases">
                 <methods>
                     <include name="tc01"/>
                     <include name="tc02"/>
+                </methods>
+            </class>
+            <class name="TestCases.Elements.RadioBtn">
+                <methods>
+                    <include name="no"/>
+                </methods>
+            </class>
+            <class name="TestCases.Elements.TextBox">
+                <methods>
+                    <include name="textBox"/>
                 </methods>
             </class>
             <class name="TestCases.FirstTestCase">
@@ -22,6 +42,11 @@
                 <methods>
                     <include name="loginTestCase"/>
                     <include name="loginTextFail"/>
+                </methods>
+            </class>
+            <class name="TestCases.takeScreenshot">
+                <methods>
+                    <include name="takeScreenshot"/>
                 </methods>
             </class>
         </classes>
