@@ -10,7 +10,7 @@ import java.io.IOException;
 
 public class VwoPage extends CommenToAllPages {
 
-    static WebDriver driver;
+    WebDriver driver;
 
     public VwoPage(WebDriver driver) {
 
@@ -27,17 +27,17 @@ public class VwoPage extends CommenToAllPages {
 
     //Page Actions
     public String loginTestCase() throws IOException {
-        visibilityOfElement(email, PropertyReader.readKey("name"));
-        visibilityOfElement(password, PropertyReader.readKey("pswd"));
-        visibilityOfElement(signInButton);
+        clickAndReturn(email, PropertyReader.readKey("name"));
+        clickAndReturn(password, PropertyReader.readKey("pswd"));
+        click(signInButton);
         String emsg = getText(errorTest);
         return emsg;
     }
 
     public String loginFailTestCase() throws IOException {
-        visibilityOfElement(email, PropertyReader.readKey("name"));
-        visibilityOfElement(password, PropertyReader.readKey("pswd"));
-        visibilityOfElement(signInButton);
+        clickAndReturn(email, PropertyReader.readKey("name"));
+        clickAndReturn(password, PropertyReader.readKey("pswd"));
+        click(signInButton);
         String emsg = getText(errorTest);
         return emsg;
     }

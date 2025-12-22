@@ -7,7 +7,7 @@ import org.openqa.selenium.WebDriver;
 
 public class ElementsTextBox extends CommenToAllPages {
 
-    static WebDriver driver;
+    WebDriver driver;
     public ElementsTextBox(WebDriver driver) {
         this.driver = driver;
     }
@@ -22,14 +22,13 @@ public class ElementsTextBox extends CommenToAllPages {
 
     public String textBoxCheck(){
 
-        visibilityOfElement(fullName, "jitendra");
-        visibilityOfElement(email, "abc@gmail.com");
+        clickAndReturn(fullName, "jitendra");
+        clickAndReturn(email, "abc@gmail.com");
         JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("window.scrollBy(0,500)");
-        visibilityOfElement(submit);
+       // js.executeScript("window.scrollBy(0,500)");
+        js.executeScript("arguments[0].scrollIntoView(true);", driver.findElement(submit));
+        click(submit);
         String resultText = getText(result);
-
         return resultText;
     }
-
 }

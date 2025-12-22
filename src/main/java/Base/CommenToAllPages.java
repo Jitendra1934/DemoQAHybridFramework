@@ -2,6 +2,10 @@ package Base;
 
 import DriverManager.DriverManager;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -9,12 +13,12 @@ import java.time.Duration;
 
 public class CommenToAllPages {
 
-    public void visibilityOfElement(By by) {
+    public void click(By by) {
         WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(20));
         wait.until(ExpectedConditions.visibilityOfElementLocated(by)).click();
     }
 
-    public void visibilityOfElement(By by, String text) {
+    public void clickAndReturn(By by, String text) {
         WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(20));
         wait.until(ExpectedConditions.visibilityOfElementLocated(by)).sendKeys(text);
     }
@@ -24,4 +28,26 @@ public class CommenToAllPages {
         return wait.until(ExpectedConditions.visibilityOfElementLocated(by)).getText();
     }
 
+    public void rightClick(WebDriver driver, WebElement element){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));
+        // wait until element is visible & clickable
+        wait.until(ExpectedConditions.elementToBeClickable(element));
+        Actions action = new Actions(driver);
+        action.moveToElement(element).contextClick().build().perform();
+    }
+    public void doubleClick(WebDriver driver, WebElement element){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+        wait.until(ExpectedConditions.elementToBeClickable(element));
+        Actions action = new Actions(driver);
+        action.moveToElement(element).doubleClick().build().perform();
+    }
+
+    public void scrollToElement(By by, WebDriver driver){
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].scrollIntoView(true);", driver.findElement(by));
+
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        driver.manage().window().maximize();
+
+    }
 }
