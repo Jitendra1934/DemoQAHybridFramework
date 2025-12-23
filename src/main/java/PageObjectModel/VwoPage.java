@@ -27,16 +27,16 @@ public class VwoPage extends CommenToAllPages {
 
     //Page Actions
     public String loginTestCase() throws IOException {
-        clickAndReturn(email, PropertyReader.readKey("name"));
-        clickAndReturn(password, PropertyReader.readKey("pswd"));
+        sendKeys(email, PropertyReader.readKey("name"));
+        sendKeys(password, PropertyReader.readKey("pswd"));
         click(signInButton);
         String emsg = getText(errorTest);
         return emsg;
     }
 
     public String loginFailTestCase() throws IOException {
-        clickAndReturn(email, PropertyReader.readKey("name"));
-        clickAndReturn(password, PropertyReader.readKey("pswd"));
+        sendKeys(email, PropertyReader.readKey("name"));
+        sendKeys(password, PropertyReader.readKey("pswd"));
         click(signInButton);
         String emsg = getText(errorTest);
         return emsg;

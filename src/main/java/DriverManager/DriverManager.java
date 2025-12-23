@@ -21,15 +21,7 @@ public class DriverManager {
         if (driver.get() == null) {
             switch (browser.toLowerCase()) {
                 case "chrome": {
-
                     ChromeOptions options = new ChromeOptions();
-                    options.addArguments("--disable-notifications");
-                    options.addArguments("--disable-geolocation");
-                    options.addArguments("--disable-infobars");
-                    options.addArguments("--disable-extensions");
-                    options.addArguments("--disable-popup-blocking");
-                    options.addArguments("--disable-ads");
-                    options.addArguments("--disable-gpu");
                     options.addArguments("--start-maximized");
                     WebDriver driver1 = new ChromeDriver(options);
                     setDriver(driver1);

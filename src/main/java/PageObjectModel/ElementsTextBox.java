@@ -22,8 +22,8 @@ public class ElementsTextBox extends CommenToAllPages {
 
     public String textBoxCheck(){
 
-        clickAndReturn(fullName, "jitendra");
-        clickAndReturn(email, "abc@gmail.com");
+        sendKeys(fullName, "jitendra");
+        sendKeys(email, "abc@gmail.com");
         JavascriptExecutor js = (JavascriptExecutor) driver;
        // js.executeScript("window.scrollBy(0,500)");
         js.executeScript("arguments[0].scrollIntoView(true);", driver.findElement(submit));
