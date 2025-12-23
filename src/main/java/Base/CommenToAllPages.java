@@ -18,7 +18,7 @@ public class CommenToAllPages {
         wait.until(ExpectedConditions.visibilityOfElementLocated(by)).click();
     }
 
-    public void clickAndReturn(By by, String text) {
+    public void sendKeys(By by, String text) {
         WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(20));
         wait.until(ExpectedConditions.visibilityOfElementLocated(by)).sendKeys(text);
     }
@@ -49,5 +49,12 @@ public class CommenToAllPages {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver.manage().window().maximize();
 
+    }
+
+    public String enabled(By by, WebDriver driver){
+        if(driver.findElement(by).isEnabled()){
+          return  "btn is enabled and clicked";
+        }
+        return "failed";
     }
 }
