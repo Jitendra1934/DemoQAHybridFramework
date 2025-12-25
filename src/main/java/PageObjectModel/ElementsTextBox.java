@@ -22,13 +22,13 @@ public class ElementsTextBox extends CommenToAllPages {
 
     public String textBoxCheck(){
 
-        sendKeys(fullName, "jitendra");
-        sendKeys(email, "abc@gmail.com");
+        sendKeys(fullName, "jitendra", driver);
+        sendKeys(email, "abc@gmail.com", driver);
         JavascriptExecutor js = (JavascriptExecutor) driver;
        // js.executeScript("window.scrollBy(0,500)");
         js.executeScript("arguments[0].scrollIntoView(true);", driver.findElement(submit));
-        click(submit);
-        String resultText = getText(result);
+        click(submit, driver);
+        String resultText = getText(result, driver);
         return resultText;
     }
 }

@@ -18,6 +18,6 @@ public class ElementsPage extends CommenToAllPages {
     //Page Actions
 
     public void clickTextBox(){
-        click(textBox);
+        click(textBox, driver);
     }
 }

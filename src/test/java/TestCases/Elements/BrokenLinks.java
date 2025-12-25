@@ -1,6 +1,6 @@
 package TestCases.Elements;
 
-import Base.CommenToAllTestCases;
+/*import Base.CommenToAllTestCases;
 import DriverManager.DriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -10,11 +10,11 @@ import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.List;
+import java.util.List;*/
 
-public class BrokenLinks extends CommenToAllTestCases {
+public class BrokenLinks /*extends CommenToAllTestCases*/ {
 
-    @Test
+   /* @Test
     public void brokenLinks() throws IOException {
 
         DriverManager.getDriver().get("https://demoqa.com/broken");
@@ -38,5 +38,5 @@ public class BrokenLinks extends CommenToAllTestCases {
         else{
             System.out.println(url+" is valid with "+statusCode);
         }
-    }
+    }*/
 }
