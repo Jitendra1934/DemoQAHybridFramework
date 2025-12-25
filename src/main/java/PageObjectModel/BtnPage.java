@@ -26,7 +26,7 @@ public class BtnPage extends CommenToAllPages {
 
     public String dclick(){
         doubleClick(driver, driver.findElement(dbtn));
-        String res = getText(dtext);
+        String res = getText(dtext, driver);
         return res;
     }
 
@@ -34,7 +34,7 @@ public class BtnPage extends CommenToAllPages {
 
         scrollToElement(rbtn, driver);
         rightClick(driver, driver.findElement(rbtn));
-        String res = getText(rtext);
+        String res = getText(rtext, driver);
         return res;
     }
 
@@ -42,7 +42,7 @@ public class BtnPage extends CommenToAllPages {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript(/*"arguments[0].scrollIntoView(true);", driver.findElement(noBtn)*/ "window,scrollBy(0,350)");
         doubleClick(driver, driver.findElement(cbtn));
-        String res = getText(text);
+        String res = getText(text, driver);
         return res;
     }
 

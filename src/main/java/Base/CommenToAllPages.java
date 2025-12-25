@@ -13,19 +13,32 @@ import java.time.Duration;
 
 public class CommenToAllPages {
 
-    public void click(By by) {
-        WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(20));
-        wait.until(ExpectedConditions.visibilityOfElementLocated(by)).click();
+
+
+    public void click(By by,WebDriver driver) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(by));
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].scrollIntoView(true);", driver.findElement(by));
+        driver.findElement(by).click();
+
     }
 
-    public void sendKeys(By by, String text) {
+    public void sendKeys(By by, String text, WebDriver driver) {
         WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(20));
-        wait.until(ExpectedConditions.visibilityOfElementLocated(by)).sendKeys(text);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(by));
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].scrollIntoView(true);", driver.findElement(by));
+        driver.findElement(by).sendKeys(text);
     }
 
-    public String getText(By by){
+    public String getText(By by, WebDriver driver){
+
         WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(20));
-        return wait.until(ExpectedConditions.visibilityOfElementLocated(by)).getText();
+        wait.until(ExpectedConditions.visibilityOfElementLocated(by));
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].scrollIntoView(true);", driver.findElement(by));
+        return driver.findElement(by).getText();
     }
 
     public void rightClick(WebDriver driver, WebElement element){
@@ -52,9 +65,26 @@ public class CommenToAllPages {
     }
 
     public String enabled(By by, WebDriver driver){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(by));
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].scrollIntoView(true);", driver.findElement(by));
         if(driver.findElement(by).isEnabled()){
           return  "btn is enabled and clicked";
         }
         return "failed";
+    }
+
+    public String selected(By by, WebDriver driver){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(by));
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].scrollIntoView(true);", driver.findElement(by));
+
+        if(driver.findElement(by).isSelected()){
+            driver.findElement(by).click();
+            return  "btn is selected and clicked";
+        }
+        return "failed to select";
     }
 }

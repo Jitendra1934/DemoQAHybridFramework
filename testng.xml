@@ -1,19 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite">
-
     <test verbose="2" preserve-order="true" name="C:/Users/hp/IdeaProjects/DemoQAHybridFramework/src/test">
         <classes>
-            <class name="TestCases.Elements.ClickLinkElement">
-                <methods>
-                    <include name="clicklink"/>
-                </methods>
-            </class>
             <class name="TestCases.Elements.Btn">
                 <methods>
                     <include name="doubleClick"/>
                     <include name="rightClick"/>
                     <include name="click"/>
+                </methods>
+            </class>
+            <class name="TestCases.Elements.ClickLinkElement">
+                <methods>
+                    <include name="clicklink"/>
                 </methods>
             </class>
             <class name="TestCases.Elements.ElementsTestCases">
@@ -32,6 +31,12 @@
                     <include name="textBox"/>
                 </methods>
             </class>
+            <class name="TestCases.Elements.UploadBtn">
+                <methods>
+                    <include name="uploadTestCase"/>
+                    <include name="download"/>
+                </methods>
+            </class>
             <class name="TestCases.FirstTestCase">
                 <methods>
                     <include name="testCase"/>
@@ -47,6 +52,19 @@
             <class name="TestCases.takeScreenshot">
                 <methods>
                     <include name="takeScreenshot"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test  verbose="2" preserve-order="true" name="forms test">
+        <classes>
+            <class name="TestCases.Forms.FormTestCases">
+                <methods>
+                    <include name="submitTestCase"/>
+                    <include name="getStudentName"/>
+                    <include name="getStudentEmail"/>
+                    <include name="getStudentGender"/>
+                    <include name="getStudentNumber"/>
                 </methods>
             </class>
         </classes>

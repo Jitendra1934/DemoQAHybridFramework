@@ -16,7 +16,7 @@ public class ClickLick extends CommenToAllPages {
 
     public void clickLink(){
         scrollToElement(link, driver);
-        click(link);
+        click(link, driver);
 
     }
 }

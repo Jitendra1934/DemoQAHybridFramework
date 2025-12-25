@@ -2,7 +2,6 @@ package PageObjectModel;
 
 import Base.CommenToAllPages;
 import Utilities.PropertyReader;
-import dev.failsafe.internal.util.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -27,18 +26,18 @@ public class VwoPage extends CommenToAllPages {
 
     //Page Actions
     public String loginTestCase() throws IOException {
-        sendKeys(email, PropertyReader.readKey("name"));
-        sendKeys(password, PropertyReader.readKey("pswd"));
-        click(signInButton);
-        String emsg = getText(errorTest);
+        sendKeys(email, PropertyReader.readKey("name"), driver);
+        sendKeys(password, PropertyReader.readKey("pswd"), driver);
+        click(signInButton, driver);
+        String emsg = getText(errorTest, driver);
         return emsg;
     }
 
     public String loginFailTestCase() throws IOException {
-        sendKeys(email, PropertyReader.readKey("name"));
-        sendKeys(password, PropertyReader.readKey("pswd"));
-        click(signInButton);
-        String emsg = getText(errorTest);
+        sendKeys(email, PropertyReader.readKey("name"), driver);
+        sendKeys(password, PropertyReader.readKey("pswd"), driver);
+        click(signInButton, driver);
+        String emsg = getText(errorTest, driver);
         return emsg;
     }
 }
