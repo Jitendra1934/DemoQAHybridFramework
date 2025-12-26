@@ -64,6 +64,7 @@
                     <include name="getStudentName"/>
                     <include name="getStudentEmail"/>
                     <include name="getStudentGender"/>
+
                     <include name="getStudentNumber"/>
                 </methods>
             </class>

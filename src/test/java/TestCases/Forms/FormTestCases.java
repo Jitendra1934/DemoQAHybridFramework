@@ -39,5 +39,18 @@ public class FormTestCases extends CommenToAllTestCasesBATest {
         String number = fp.getStudentNumber();
         Assert.assertEquals(number, "7894561230");
     }
+    @Test(priority = 6)
+    public void getDate(){
 
+        FormsPOM fp = new FormsPOM(DriverManager.getDriver());
+        String date = fp.getDateOfBirth();
+        Assert.assertEquals(date, "24 August,1999");
+    }
+
+    @Test(priority = 7)
+    public void getSubject(){
+        FormsPOM fp = new FormsPOM(DriverManager.getDriver());
+        String sub  = fp.getSubjectname();
+        Assert.assertEquals(sub, "Computer Science, Economics");
+    }
 }

@@ -1,8 +1,11 @@
 package PageObjectModel;
 
 import Base.CommenToAllPages;
+import DriverManager.DriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+
+import java.time.Duration;
 
 public class FormsPOM extends CommenToAllPages {
 
@@ -24,9 +27,18 @@ public class FormsPOM extends CommenToAllPages {
     private By studentEmail = By.xpath("//table[@class=\"table table-dark table-striped table-bordered table-hover\"]/tbody/tr[2]/td[2]");
     private By gender = By.xpath("//table[@class=\"table table-dark table-striped table-bordered table-hover\"]/tbody/tr[3]/td[2]");
     private By mobileNumber = By.xpath("//table[@class=\"table table-dark table-striped table-bordered table-hover\"]/tbody/tr[4]/td[2]");
+    private By dateOfBirth = By.xpath("//input[@id=\"dateOfBirthInput\"]");
+    private By selectYear = By.xpath("//select[@class=\"react-datepicker__year-select\"]");
+    private By selectMonth = By.xpath("//select[@class=\"react-datepicker__month-select\"]");
+    private By selectDate = By.xpath("//div[text()=\"24\"]");
+    private By dOB = By.xpath("//table[@class=\"table table-dark table-striped table-bordered table-hover\"]/tbody/tr[5]/td[2]");
+    private By subjectSelect = By.xpath("//div[@id=\"subjectsWrapper\"]/div[2]/div/div/div");
+    private By  subjectInput = By.xpath("//input[@id=\"subjectsInput\"]");
+    private By subject =  By.xpath("//table[@class=\"table table-dark table-striped table-bordered table-hover\"]/tbody/tr[6]/td[2]");
 
     private By submitBtn = By.xpath("//button[@id=\"submit\"]");
     private By afterSubmit = By.xpath("//div[text() =\"Thanks for submitting the form\"]");
+
 
     //page Actions
 
@@ -39,7 +51,21 @@ public class FormsPOM extends CommenToAllPages {
         selected(genderOther, driver);
         click(genderMale, driver);
         sendKeys(userNumber, "7894561230", driver);
+        //handling the DOB
+        click(dateOfBirth,driver);
+        dropDownSelect(selectYear, driver, "1999");
+        dropDownSelect(selectMonth, driver, "August");
+        click(selectDate, driver);
+        //handling subject
+        click(subjectSelect, driver);
+        sendKeys(subjectInput, "Computer Science", driver);
+        clickEnter(subjectInput, driver);
+        sendKeys(subjectInput, "Economics", driver);
+        clickEnter(subjectInput, driver);
+
+        //Submit btn
         click(submitBtn, driver);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
         String text =getText(afterSubmit, driver);
         return text;
     }
@@ -61,4 +87,14 @@ public class FormsPOM extends CommenToAllPages {
         return number;
     }
 
+    public String getDateOfBirth(){
+
+        String date = getText(dOB,driver);
+        return date;
+    }
+
+    public String getSubjectname(){
+        String sub = getText(subject, driver);
+        return sub;
+    }
 }
