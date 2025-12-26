@@ -1,12 +1,10 @@
 package Base;
 
 import DriverManager.DriverManager;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
@@ -86,5 +84,13 @@ public class CommenToAllPages {
             return  "btn is selected and clicked";
         }
         return "failed to select";
+    }
+
+    public void dropDownSelect(By by , WebDriver driver, String text){
+        Select select = new Select(driver.findElement(by));
+        select.selectByVisibleText(text);
+    }
+    public void clickEnter(By by, WebDriver driver){
+        driver.findElement(by).sendKeys(Keys.ENTER);
     }
 }
