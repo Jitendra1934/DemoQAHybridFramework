@@ -1,7 +1,6 @@
 package PageObjectModel;
 
 import Base.CommenToAllPages;
-import DriverManager.DriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -16,7 +15,7 @@ public class FormsPOM extends CommenToAllPages {
     }
 
     //Page Locaters
-    private By firstname = By.id("firstName");
+    private final By firstname = By.id("firstName");
     private By lastname = By.id("lastName");
     private By userEmail = By.xpath("//input[@id=\"userEmail\"]");
     private By genderMale = By.xpath("//label[@for=\"gender-radio-1\"]");
@@ -33,9 +32,21 @@ public class FormsPOM extends CommenToAllPages {
     private By selectDate = By.xpath("//div[text()=\"24\"]");
     private By dOB = By.xpath("//table[@class=\"table table-dark table-striped table-bordered table-hover\"]/tbody/tr[5]/td[2]");
     private By subjectSelect = By.xpath("//div[@id=\"subjectsWrapper\"]/div[2]/div/div/div");
-    private By  subjectInput = By.xpath("//input[@id=\"subjectsInput\"]");
+    private By subjectInput = By.xpath("//input[@id=\"subjectsInput\"]");
     private By subject =  By.xpath("//table[@class=\"table table-dark table-striped table-bordered table-hover\"]/tbody/tr[6]/td[2]");
-
+    private By hobbiesSportsCheckBox = By.xpath("//label[text()=\"Sports\"]");
+    private By hobbiesReadingCheckBox = By.xpath("//label[text()=\"Reading\"]");
+    private By hobbiesMusicCheckBox = By.xpath("//label[text()=\"Music\"]");
+    private By hobbies = By.xpath("//table[@class=\"table table-dark table-striped table-bordered table-hover\"]/tbody/tr[7]/td[2]");
+    private By uploadBtn = By.xpath("//input[@id=\"uploadPicture\"]");
+    private By uploadText = By.xpath("//table[@class=\"table table-dark table-striped table-bordered table-hover\"]/tbody/tr[8]/td[2]");
+    private By address = By.xpath("//textarea[@placeholder=\"Current Address\"]");
+    private By addressText = By.xpath("//table[@class=\"table table-dark table-striped table-bordered table-hover\"]/tbody/tr[9]/td[2]");
+    private By sateDropDown = By.xpath("//div[text()=\"Select State\"]");
+    private By selectSate = By.xpath("//div[text()=\"Haryana\"]");
+    private By stateAndCityText = By.xpath("//table[@class=\"table table-dark table-striped table-bordered table-hover\"]/tbody/tr[10]/td[2]");
+    private By cityDropDown = By.xpath("//div[text()=\"Select City\"]");
+    private By selectCity = By.xpath("//div[text()=\"Karnal\"]");
     private By submitBtn = By.xpath("//button[@id=\"submit\"]");
     private By afterSubmit = By.xpath("//div[text() =\"Thanks for submitting the form\"]");
 
@@ -49,12 +60,12 @@ public class FormsPOM extends CommenToAllPages {
         selected(genderMale, driver);
         selected(genderFemale, driver);
         selected(genderOther, driver);
-        click(genderMale, driver);
+        selected(genderMale, driver);
         sendKeys(userNumber, "7894561230", driver);
         //handling the DOB
         click(dateOfBirth,driver);
-        dropDownSelect(selectYear, driver, "1999");
-        dropDownSelect(selectMonth, driver, "August");
+        calenderDropDownSelect(selectYear, driver, "1999");
+        calenderDropDownSelect(selectMonth, driver, "August");
         click(selectDate, driver);
         //handling subject
         click(subjectSelect, driver);
@@ -62,6 +73,16 @@ public class FormsPOM extends CommenToAllPages {
         clickEnter(subjectInput, driver);
         sendKeys(subjectInput, "Economics", driver);
         clickEnter(subjectInput, driver);
+        //Hobbies Selected
+        selected(hobbiesSportsCheckBox, driver);
+        selected(hobbiesReadingCheckBox, driver);
+        selected(hobbiesMusicCheckBox, driver);
+        //upload btn
+        sendKeys(uploadBtn, "C:\\Users\\hp\\IdeaProjects\\DemoQAHybridFramework\\screenshot01", driver);
+        //Address
+        sendKeys(address, "Demo Address", driver);
+        //StateAndCity
+        dropDownHandler(sateDropDown, selectSate, cityDropDown,selectCity,driver);
 
         //Submit btn
         click(submitBtn, driver);
@@ -96,5 +117,26 @@ public class FormsPOM extends CommenToAllPages {
     public String getSubjectname(){
         String sub = getText(subject, driver);
         return sub;
+    }
+
+    public String  getHobbies(){
+        String hobbiesSelected = getText(hobbies, driver);
+        return hobbiesSelected;
+    }
+
+    public String getUpload(){
+        String upload = getText(uploadText, driver);
+        return upload;
+    }
+
+    public String getAddress(){
+        String add = getText(addressText, driver);
+        return add;
+    }
+
+    public String getDropDownSelectedStateAndCity(){
+
+        String stateAndCity = getText(stateAndCityText, driver);
+        return stateAndCity;
     }
 }
