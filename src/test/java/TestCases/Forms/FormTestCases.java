@@ -53,4 +53,30 @@ public class FormTestCases extends CommenToAllTestCasesBATest {
         String sub  = fp.getSubjectname();
         Assert.assertEquals(sub, "Computer Science, Economics");
     }
+    @Test(priority = 8)
+    public void getHobbies(){
+        FormsPOM fp = new FormsPOM(DriverManager.getDriver());
+        String hobbies = fp.getHobbies();
+        Assert.assertEquals(hobbies, "Sports, Reading, Music");
+    }
+    @Test(priority = 9)
+    public void getUpload(){
+        FormsPOM fp = new FormsPOM(DriverManager.getDriver());
+        String upload = fp.getUpload();
+        Assert.assertEquals(upload, "screenshot01");
+    }
+    @Test(priority = 10)
+    public void getAddress(){
+        FormsPOM fp = new FormsPOM(DriverManager.getDriver());
+        String address = fp.getAddress();
+        Assert.assertEquals(address, "Demo Address");
+    }
+    @Test(priority = 11)
+    public void getStateAndCity(){
+        FormsPOM fp = new FormsPOM(DriverManager.getDriver());
+        String stateAndCity = fp.getDropDownSelectedStateAndCity();
+        Assert.assertEquals(stateAndCity, "Haryana Karnal");
+    }
+
+
 }

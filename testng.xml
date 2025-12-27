@@ -64,8 +64,14 @@
                     <include name="getStudentName"/>
                     <include name="getStudentEmail"/>
                     <include name="getStudentGender"/>
-
                     <include name="getStudentNumber"/>
+                    <include name="getDate"/>
+                    <include name="getSubject"/>
+                    <include name="getHobbies"/>
+                    <include name="getUpload"/>
+                    <include name="getAddress"/>
+                    <include name="getStateAndCity"/>
+
                 </methods>
             </class>
         </classes>

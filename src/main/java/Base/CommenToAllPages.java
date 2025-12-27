@@ -8,6 +8,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.List;
 
 public class CommenToAllPages {
 
@@ -73,24 +74,30 @@ public class CommenToAllPages {
         return "failed";
     }
 
-    public String selected(By by, WebDriver driver){
+    public void selected(By by, WebDriver driver){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
         wait.until(ExpectedConditions.visibilityOfElementLocated(by));
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].scrollIntoView(true);", driver.findElement(by));
-
-        if(driver.findElement(by).isSelected()){
-            driver.findElement(by).click();
-            return  "btn is selected and clicked";
-        }
-        return "failed to select";
+        driver.findElement(by).click();
     }
 
-    public void dropDownSelect(By by , WebDriver driver, String text){
+    public void calenderDropDownSelect(By by , WebDriver driver, String text){
         Select select = new Select(driver.findElement(by));
         select.selectByVisibleText(text);
     }
     public void clickEnter(By by, WebDriver driver){
         driver.findElement(by).sendKeys(Keys.ENTER);
+    }
+
+    public void dropDownHandler(By stateDD, By selectSate, By cityDD, By selectCity, WebDriver driver){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(stateDD));
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].scrollIntoView(true);", driver.findElement(stateDD));
+        driver.findElement(stateDD).click();
+        driver.findElement(selectSate).click();
+        driver.findElement(cityDD).click();
+        driver.findElement(selectCity).click();
     }
 }
