@@ -1,4 +1,4 @@
-package PageObjectModel;
+package PageObjectModel.Form;
 
 import Base.CommenToAllPages;
 import org.openqa.selenium.By;

@@ -2,7 +2,7 @@ package TestCases.Elements;
 
 import Base.CommenToAllTestCases;
 import DriverManager.DriverManager;
-import PageObjectModel.ElementsTextBox;
+import PageObjectModel.Elements.ElementsTextBox;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 

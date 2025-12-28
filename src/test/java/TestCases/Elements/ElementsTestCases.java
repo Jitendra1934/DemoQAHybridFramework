@@ -2,8 +2,8 @@ package TestCases.Elements;
 
 import Base.CommenToAllTestCases;
 import DriverManager.DriverManager;
-import PageObjectModel.DemoQAPage;
-import PageObjectModel.ElementsPage;
+import PageObjectModel.Elements.DemoQAPage;
+import PageObjectModel.Elements.ElementsPage;
 import org.openqa.selenium.JavascriptExecutor;
 import org.testng.Assert;
 import org.testng.annotations.Test;

@@ -2,7 +2,7 @@ package TestCases.Elements;
 
 import Base.CommenToAllTestCases;
 import DriverManager.DriverManager;
-import PageObjectModel.ClickLick;
+import PageObjectModel.Elements.ClickLick;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 

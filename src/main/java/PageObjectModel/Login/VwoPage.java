@@ -1,4 +1,4 @@
-package PageObjectModel;
+package PageObjectModel.Login;
 
 import Base.CommenToAllPages;
 import Utilities.PropertyReader;

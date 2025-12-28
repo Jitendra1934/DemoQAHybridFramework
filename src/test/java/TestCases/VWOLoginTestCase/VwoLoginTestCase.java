@@ -2,7 +2,7 @@ package TestCases.VWOLoginTestCase;
 
 import Base.CommenToAllTestCases;
 import DriverManager.DriverManager;
-import PageObjectModel.VwoPage;
+import PageObjectModel.Login.VwoPage;
 import Utilities.PropertyReader;
 import org.testng.Assert;
 import org.testng.annotations.Test;
