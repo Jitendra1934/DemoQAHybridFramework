@@ -2,7 +2,7 @@ package TestCases.Elements;
 
 import Base.CommenToAllTestCases;
 import DriverManager.DriverManager;
-import PageObjectModel.BtnPage;
+import PageObjectModel.Elements.BtnPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 

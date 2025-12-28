@@ -2,7 +2,7 @@ package TestCases.Forms;
 
 import Base.CommenToAllTestCasesBATest;
 import DriverManager.DriverManager;
-import PageObjectModel.FormsPOM;
+import PageObjectModel.Form.FormsPOM;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 

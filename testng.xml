@@ -54,6 +54,14 @@
                     <include name="takeScreenshot"/>
                 </methods>
             </class>
+            <class name="TestCases.AlertsTestCases.Alerts">
+                <methods>
+                    <include name="openBrowserWindows"/>
+                    <include name="newTabBtn"/>
+                    <include name="newWindowBtn"/>
+                    <include name="newWindowMsgBtn"/>
+                </methods>
+            </class>
         </classes>
     </test>
     <test  verbose="2" preserve-order="true" name="forms test">
