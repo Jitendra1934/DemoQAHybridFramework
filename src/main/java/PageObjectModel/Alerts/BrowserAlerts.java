@@ -25,11 +25,15 @@ public class BrowserAlerts extends CommenToAllPages {
     private By newMsgWindowBtn = By.xpath("//button[@id = \"messageWindowButton\"]");
     //Page Actions
     public String clickBrowserWindowsBtn(){
+        wait(browserWindowsBtn,driver);
+        scrollToElement(browserWindowsBtn,driver);
         click(browserWindowsBtn, driver);
         return driver.getCurrentUrl();
     }
 
     public String clickNewTab(){
+        wait(newTabBtn,driver);
+        scrollToElement(newTabBtn,driver);
         click(newTabBtn, driver);
         List<String> windows = new ArrayList<>(driver.getWindowHandles());
         if (windows.size() > 1) {
@@ -38,6 +42,8 @@ public class BrowserAlerts extends CommenToAllPages {
         return driver.getCurrentUrl();
     }
     public String clickNewWindow(){
+        wait(newWindow,driver);
+        scrollToElement(newWindow,driver);
         click(newWindow, driver);
         List<String> windows = new ArrayList<>(driver.getWindowHandles());
         if (windows.size() > 1) {
@@ -47,6 +53,8 @@ public class BrowserAlerts extends CommenToAllPages {
     }
 
     public String clickNewMsgWindow(){
+        wait(newMsgWindowBtn,driver);
+        scrollToElement(newMsgWindowBtn,driver);
         click(newMsgWindowBtn, driver);
         List<String> windows = new ArrayList<>(driver.getWindowHandles());
         if (windows.size() > 1) {

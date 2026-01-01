@@ -17,7 +17,7 @@ public class BtnPage extends CommenToAllPages {
     private By dbtn = By.xpath("//button[@id=\"doubleClickBtn\"]");
     private By rbtn = By.xpath("//button[@id=\"rightClickBtn\"]");
 
-    private By cbtn = By.id("gSOSx");
+    private By cbtn = By.xpath("//button[text()=\"Click Me\"]");
     private By dtext = By.id("doubleClickMessage");
     private By rtext = By.id("rightClickMessage");
     private By text = By.id("dynamicClickMessage");

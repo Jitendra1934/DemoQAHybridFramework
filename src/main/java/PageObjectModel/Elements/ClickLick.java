@@ -15,6 +15,7 @@ public class ClickLick extends CommenToAllPages {
     private By link = By.linkText("Home");
 
     public void clickLink(){
+        wait(link, driver);
         scrollToElement(link, driver);
         click(link, driver);
 

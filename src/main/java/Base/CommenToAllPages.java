@@ -1,6 +1,6 @@
 package Base;
 
-import DriverManager.DriverManager;
+
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -8,35 +8,28 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
-import java.util.List;
 
 public class CommenToAllPages {
 
+    public void alertWait(WebDriver driver){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+        wait.until(ExpectedConditions.alertIsPresent());
+    }
 
-
-    public void click(By by,WebDriver driver) {
+    public void wait(By by, WebDriver driver){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
         wait.until(ExpectedConditions.visibilityOfElementLocated(by));
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("arguments[0].scrollIntoView(true);", driver.findElement(by));
-        driver.findElement(by).click();
+    }
 
+    public void click(By by,WebDriver driver) {
+        driver.findElement(by).click();
     }
 
     public void sendKeys(By by, String text, WebDriver driver) {
-        WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(20));
-        wait.until(ExpectedConditions.visibilityOfElementLocated(by));
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("arguments[0].scrollIntoView(true);", driver.findElement(by));
         driver.findElement(by).sendKeys(text);
     }
 
     public String getText(By by, WebDriver driver){
-
-        WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(20));
-        wait.until(ExpectedConditions.visibilityOfElementLocated(by));
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("arguments[0].scrollIntoView(true);", driver.findElement(by));
         return driver.findElement(by).getText();
     }
 
@@ -57,10 +50,6 @@ public class CommenToAllPages {
     public void scrollToElement(By by, WebDriver driver){
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].scrollIntoView(true);", driver.findElement(by));
-
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        driver.manage().window().maximize();
-
     }
 
     public String enabled(By by, WebDriver driver){

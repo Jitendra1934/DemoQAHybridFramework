@@ -54,12 +54,17 @@
                     <include name="takeScreenshot"/>
                 </methods>
             </class>
-            <class name="TestCases.AlertsTestCases.Alerts">
+            <class name="TestCases.AlertsTestCases.BrowserWindowAlerts">
                 <methods>
                     <include name="openBrowserWindows"/>
                     <include name="newTabBtn"/>
                     <include name="newWindowBtn"/>
                     <include name="newWindowMsgBtn"/>
+                </methods>
+            </class>
+            <class name="TestCases.AlertsTestCases.Alerts">
+                <methods>
+                    <include name="alertClick"/>
                 </methods>
             </class>
         </classes>

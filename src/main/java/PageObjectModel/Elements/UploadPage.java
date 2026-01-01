@@ -19,7 +19,11 @@ public class UploadPage extends CommenToAllPages {
 
     //page actions
     public String upload(){
+        wait(uploadBtn, driver);
+        scrollToElement(uploadBtn, driver);
         sendKeys(uploadBtn, "C:\\Users\\hp\\IdeaProjects\\DemoQAHybridFramework\\screenshot01", driver);
+        wait(filePath, driver);
+        scrollToElement(filePath, driver);
         String path = getText(filePath, driver);
         return path;
     }
