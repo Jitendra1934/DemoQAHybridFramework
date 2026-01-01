@@ -21,13 +21,17 @@ public class ElementsTextBox extends CommenToAllPages {
     //Page Actions
 
     public String textBoxCheck(){
-
+        wait(fullName, driver);
+        scrollToElement(fullName, driver);
         sendKeys(fullName, "jitendra", driver);
+        wait(email, driver);
+        scrollToElement(email, driver);
         sendKeys(email, "abc@gmail.com", driver);
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-       // js.executeScript("window.scrollBy(0,500)");
-        js.executeScript("arguments[0].scrollIntoView(true);", driver.findElement(submit));
+        wait(submit, driver);
+        scrollToElement(submit, driver);
         click(submit, driver);
+        wait(result, driver);
+        scrollToElement(result, driver);
         String resultText = getText(result, driver);
         return resultText;
     }

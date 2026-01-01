@@ -18,6 +18,8 @@ public class ElementsPage extends CommenToAllPages {
     //Page Actions
 
     public void clickTextBox(){
+        wait(textBox, driver);
+        scrollToElement(textBox, driver);
         click(textBox, driver);
     }
 }

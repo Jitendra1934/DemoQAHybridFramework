@@ -22,25 +22,29 @@ public class RadioBtnPage extends CommenToAllPages {
 
     //page Action
     public String clickYesBtn(){
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("arguments[0].scrollIntoView(true);", driver.findElement(yesRadio));
+        wait(yesRadio, driver);
+        scrollToElement(yesRadio, driver);
         click(yesRadio, driver);
+        wait(textSelected, driver);
+        scrollToElement(textSelected, driver);
         String text = getText(textSelected, driver);
         return text;
     }
     public String clickImpBtn(){
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("arguments[0].scrollIntoView(true);", driver.findElement(impBtn));
+        wait(impBtn, driver);
+        scrollToElement(impBtn, driver);
         click(impBtn, driver);
+        wait(textSelected, driver);
+        scrollToElement(textSelected, driver);
         String text = getText(textSelected, driver);
         return text;
     }
     public String clickNoBtn(){
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript(/*"arguments[0].scrollIntoView(true);", driver.findElement(noBtn)*/ "window,scrollBy(0,350)");
-        System.out.println("beore method called");
-       click(noBtn, driver);
-        System.out.println("After the execution");
+        wait(noBtn, driver);
+        scrollToElement(noBtn, driver);
+        click(noBtn, driver);
+        wait(textSelected, driver);
+        scrollToElement(textSelected, driver);
         String text = getText(textSelected,driver);
         return text;
     }

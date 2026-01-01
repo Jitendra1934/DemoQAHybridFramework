@@ -17,6 +17,8 @@ public class DemoQAPage extends CommenToAllPages {
 
     //PageActions
     public void clickElementsInDemoQA(){
-       click(elements, driver);
+        wait(elements, driver);
+        scrollToElement(elements, driver);
+        click(elements, driver);
     }
 }
