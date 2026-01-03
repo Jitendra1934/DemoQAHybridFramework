@@ -15,7 +15,10 @@ public class CommenToAllPages {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
         wait.until(ExpectedConditions.alertIsPresent());
     }
-
+//    public void frameWait(By by, WebDriver driver){
+//        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+//        wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(by));
+//    }
     public void wait(By by, WebDriver driver){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
         wait.until(ExpectedConditions.visibilityOfElementLocated(by));

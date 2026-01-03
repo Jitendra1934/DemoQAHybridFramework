@@ -71,7 +71,4 @@ public class Alerts extends CommenToAllTestCases {
         String text = ac.cancelPromt();
         Assert.assertEquals(text, "alert cancel");
     }
-
-
-
 }
