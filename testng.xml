@@ -3,6 +3,26 @@
 <suite name="All Test Suite">
     <test verbose="2" preserve-order="true" name="C:/Users/hp/IdeaProjects/DemoQAHybridFramework/src/test">
         <classes>
+            <class name="TestCases.AlertsTestCases.Alerts">
+                <methods>
+                    <include name="alertClick"/>
+                    <include name="alertMenuClick"/>
+                    <include name="alert"/>
+                    <include name="timeAlert"/>
+                    <include name="yesAlert"/>
+                    <include name="cancelAlert"/>
+                    <include name="yesPromt"/>
+                    <include name="cancelPromt"/>
+                </methods>
+            </class>
+            <class name="TestCases.AlertsTestCases.BrowserWindowAlerts">
+                <methods>
+                    <include name="openBrowserWindows"/>
+                    <include name="newTabBtn"/>
+                    <include name="newWindowBtn"/>
+                    <include name="newWindowMsgBtn"/>
+                </methods>
+            </class>
             <class name="TestCases.Elements.Btn">
                 <methods>
                     <include name="doubleClick"/>
@@ -43,6 +63,24 @@
                     <include name="testCase01"/>
                 </methods>
             </class>
+            <class name="TestCases.Frames.FrameTestCases">
+                <methods>
+                    <include name="clickFrameBtn"/>
+                    <include name="switchToFrame1"/>
+                    <include name="switchToFrame2"/>
+                </methods>
+            </class>
+            <class name="TestCases.Frames.NestedFrames">
+                <methods>
+                    <include name="switchToFrame"/>
+                    <include name="switchToParentFrame"/>
+                </methods>
+            </class>
+            <class name="TestCases.ToolTips">
+                <methods>
+                    <include name="toolTip"/>
+                </methods>
+            </class>
             <class name="TestCases.VWOLoginTestCase.VwoLoginTestCase">
                 <methods>
                     <include name="loginTestCase"/>
@@ -52,19 +90,6 @@
             <class name="TestCases.takeScreenshot">
                 <methods>
                     <include name="takeScreenshot"/>
-                </methods>
-            </class>
-            <class name="TestCases.AlertsTestCases.BrowserWindowAlerts">
-                <methods>
-                    <include name="openBrowserWindows"/>
-                    <include name="newTabBtn"/>
-                    <include name="newWindowBtn"/>
-                    <include name="newWindowMsgBtn"/>
-                </methods>
-            </class>
-            <class name="TestCases.AlertsTestCases.Alerts">
-                <methods>
-                    <include name="alertClick"/>
                 </methods>
             </class>
         </classes>
@@ -84,7 +109,6 @@
                     <include name="getUpload"/>
                     <include name="getAddress"/>
                     <include name="getStateAndCity"/>
-
                 </methods>
             </class>
         </classes>
