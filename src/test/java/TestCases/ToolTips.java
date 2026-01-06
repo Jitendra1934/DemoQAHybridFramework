@@ -3,7 +3,6 @@ package TestCases;
 import Base.CommenToAllTestCases;
 import DriverManager.DriverManager;
 import PageObjectModel.Tooltips.FacebookToolTips;
-import io.reactivex.rxjava3.internal.observers.ForEachWhileObserver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
