@@ -18,6 +18,7 @@ public class ScreenShotUtils {
         File folder = new File(screenshotDir);
         try {
             // This will create directory automatically if not exists
+
             FileUtils.forceMkdir(folder);
 
             String timestamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());

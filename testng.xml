@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite">
+    <listeners>
+        <listener class-name="Listener.TestListener"/>
+    </listeners>
     <test verbose="2" preserve-order="true" name="C:/Users/hp/IdeaProjects/DemoQAHybridFramework/src/test">
         <classes>
             <class name="TestCases.AlertsTestCases.Alerts">
@@ -90,6 +93,20 @@
             <class name="TestCases.takeScreenshot">
                 <methods>
                     <include name="takeScreenshot"/>
+                </methods>
+            </class>
+            <class name="TestCases.DataDrivenTestCase.DataDrivenTests">
+                <methods>
+                    <include name="tc01"/>
+                </methods>
+            </class>
+            <class name="TestCases.BookStore.BookStoreTestCases">
+                <methods>
+                    <include name="clickBookStoreApplication"/>
+                    <include name="clickLoginBtn"/>
+                    <include name="clickNewUser"/>
+                    <include name="validLogin"/>
+                    <include name="inValidLogin"/>
                 </methods>
             </class>
         </classes>

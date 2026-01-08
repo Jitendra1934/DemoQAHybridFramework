@@ -6,13 +6,10 @@ import org.apache.poi.ss.usermodel.WorkbookFactory;
 import org.testng.annotations.DataProvider;
 import java.io.FileInputStream;
 import java.io.IOException;
-
 public class ExcelSheetReader {
-
     public static Workbook workbook;
     public static Sheet sheet;
     public static String sheetPath = System.getProperty("user.dir")+"/src/test/Resources/Data Driven Testing File.xlsx";
-
     public Object[][] getDataFromExcelSheet(String sheetName) throws IOException {
         FileInputStream file = new FileInputStream(sheetPath);
 
@@ -30,8 +27,21 @@ public class ExcelSheetReader {
     }
 
     @DataProvider
-    public Object[][] getData() throws IOException {
+    public  Object[][] getData() throws IOException {
 
         return getDataFromExcelSheet("DemoQATestDataSheet");
+    }
+
+
+    @DataProvider
+    public Object[][] getLoginPageValidData() throws IOException {
+        ExcelSheetReader esr = new ExcelSheetReader();
+        return esr.getDataFromExcelSheet("loginValidData");
+    }
+
+    @DataProvider
+    public Object[][] getLoginPageInValidData() throws IOException {
+        ExcelSheetReader esr = new ExcelSheetReader();
+        return esr.getDataFromExcelSheet("loginInvalidData");
     }
 }
