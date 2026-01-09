@@ -130,4 +130,16 @@
             </class>
         </classes>
     </test>
+    <test  verbose="2" preserve-order="true" name="Book Store Profile">
+        <classes>
+            <class name="TestCases.BookStore.BookStoreProfileTestCases">
+                <methods>
+                    <include name="validLogin"/>
+                    <include name="clickGoToStore"/>
+                    <include name="dropDown"/>
+                    <include name="deleteAllBooks"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
 </suite>
