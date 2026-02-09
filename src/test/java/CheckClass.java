@@ -1,3 +1,5 @@
+import Base.CommenToAllTestCases;
+import DriverManager.DriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -10,13 +12,14 @@ import org.testng.annotations.Test;
 import java.time.Duration;
 
 
-public class CheckClass {
+public class CheckClass  extends CommenToAllTestCases {
 
     @Test
-    public void tc(){
-        WebDriver driver = new ChromeDriver();
-        driver.get("https://demoqa.com/automation-practice-form");
-        WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(20));
+    public void tc() {
+
+        DriverManager.getDriver().get("https://demoqa.com/automation-practice-form");
+        DriverManager.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+        /*WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(20));
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@id=\"stateCity-wrapper\"]/div[2]/div")));
         JavascriptExecutor js =(JavascriptExecutor) driver;
         js.executeScript("arguments[0].scrollIntoView(true);",driver.findElement((By.xpath("//div[text()=\"Select State\"]"))));
@@ -27,10 +30,6 @@ public class CheckClass {
         WebElement  cityDropDown = driver.findElement(By.xpath("//div[text()=\"Select City\"]"));
         cityDropDown.click();
         WebElement  selectCity = driver.findElement(By.xpath("//div[text()=\"Karnal\"]"));
-        selectCity.click();
-
-
-
-
+        selectCity.click();*/
     }
 }
