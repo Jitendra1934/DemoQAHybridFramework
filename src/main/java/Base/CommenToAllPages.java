@@ -79,11 +79,13 @@ public class CommenToAllPages {
         select.selectByVisibleText(text);
     }
     public void clickEnter(By by, WebDriver driver){
+
         driver.findElement(by).sendKeys(Keys.ENTER);
     }
 
+
     public void dropDownHandler(By stateDD, By selectSate, By cityDD, By selectCity, WebDriver driver){
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));
         wait.until(ExpectedConditions.visibilityOfElementLocated(stateDD));
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].scrollIntoView(true);", driver.findElement(stateDD));
@@ -91,5 +93,11 @@ public class CommenToAllPages {
         driver.findElement(selectSate).click();
         driver.findElement(cityDD).click();
         driver.findElement(selectCity).click();
+    }
+
+    public void moveToElement(By element, WebDriver driver){
+        Actions action = new Actions(driver);
+        action.moveToElement(driver.findElement(element));
+
     }
 }
