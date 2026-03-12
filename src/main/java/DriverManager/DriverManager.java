@@ -1,9 +1,11 @@
 package DriverManager;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class DriverManager {
@@ -21,6 +23,7 @@ public class DriverManager {
         if (driver.get() == null) {
             switch (browser.toLowerCase()) {
                 case "chrome": {
+                    WebDriverManager.chromedriver().setup();
                     ChromeOptions options = new ChromeOptions();
                     options.addArguments("--start-maximized");
                     WebDriver driver1 = new ChromeDriver(options);
@@ -28,7 +31,11 @@ public class DriverManager {
                     break;
                 }
                 case "edge": {
-                    WebDriver driver1 = new EdgeDriver();
+
+                    System.setProperty("webdriver.edge.driver",
+                            System.getProperty("user.dir") + "\\drivers\\msedgedriver.exe");
+
+                     WebDriver driver1 = new EdgeDriver();
                     setDriver(driver1);
                     break;
                 }

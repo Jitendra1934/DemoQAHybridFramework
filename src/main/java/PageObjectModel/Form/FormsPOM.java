@@ -1,6 +1,7 @@
 package PageObjectModel.Form;
 
 import Base.CommenToAllPages;
+import Utilities.Log;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -42,10 +43,10 @@ public class FormsPOM extends CommenToAllPages {
     private By uploadText = By.xpath("//table[@class=\"table table-dark table-striped table-bordered table-hover\"]/tbody/tr[8]/td[2]");
     private By address = By.xpath("//textarea[@placeholder=\"Current Address\"]");
     private By addressText = By.xpath("//table[@class=\"table table-dark table-striped table-bordered table-hover\"]/tbody/tr[9]/td[2]");
-    private By sateDropDown = By.xpath("//div[text()=\"Select State\"]");
+    private By sateDropDown = By.id("state");
     private By selectSate = By.xpath("//div[text()=\"Haryana\"]");
     private By stateAndCityText = By.xpath("//table[@class=\"table table-dark table-striped table-bordered table-hover\"]/tbody/tr[10]/td[2]");
-    private By cityDropDown = By.xpath("//div[text()=\"Select City\"]");
+    private By cityDropDown = By.id("city");
     private By selectCity = By.xpath("//div[text()=\"Karnal\"]");
     private By submitBtn = By.xpath("//button[@id=\"submit\"]");
     private By afterSubmit = By.xpath("//div[text() =\"Thanks for submitting the form\"]");
@@ -102,6 +103,8 @@ public class FormsPOM extends CommenToAllPages {
         wait(address, driver);
         scrollToElement(address, driver);
         sendKeys(address, "Demo Address", driver);
+       // Log.info("Moving control from address to state dropdown");
+       // moveToElement(sateDropDown, driver);
         //StateAndCity
         dropDownHandler(sateDropDown, selectSate, cityDropDown,selectCity,driver);
 

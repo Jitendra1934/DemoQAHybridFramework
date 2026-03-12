@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="All Test Suite">
+<suite name="All Test Suite" parallel="tests" thread-count="2">
     <listeners>
         <listener class-name="Listener.TestListener"/>
     </listeners>
-    <test verbose="2" preserve-order="true" name="C:/Users/hp/IdeaProjects/DemoQAHybridFramework/src/test">
+
+    <test verbose="2" preserve-order="true" name="All test Cases chrome">
         <classes>
             <class name="TestCases.AlertsTestCases.Alerts">
                 <methods>
@@ -109,9 +110,165 @@
                     <include name="inValidLogin"/>
                 </methods>
             </class>
+            <class name="TestCases.ShadowDomTestCases.ShadowDom">
+                <methods>
+                    <include name="shadowDom"/>
+                    <include name="nestedDom"/>
+                    <include name="multiNestedDom"/>
+                </methods>
+            </class>
         </classes>
     </test>
-    <test  verbose="2" preserve-order="true" name="forms test">
+    <test  verbose="2" preserve-order="true" name="forms test chrome">
+        <classes>
+            <class name="TestCases.Forms.FormTestCases">
+                <methods>
+                    <include name="submitTestCase"/>
+                    <include name="getStudentName"/>
+                    <include name="getStudentEmail"/>
+                    <include name="getStudentGender"/>
+                    <include name="getStudentNumber"/>
+                    <include name="getDate"/>
+                    <include name="getSubject"/>
+                    <include name="getHobbies"/>
+                    <include name="getUpload"/>
+                    <include name="getAddress"/>
+                    <include name="getStateAndCity"/>
+                </methods>
+            </class>
+
+        </classes>
+    </test>
+    <test  verbose="2" preserve-order="true" name="Book Store Profile chrome">
+        <classes>
+            <class name="TestCases.BookStore.BookStoreProfileTestCases">
+                <methods>
+                    <include name="validLogin"/>
+                    <include name="clickGoToStore"/>
+                    <include name="dropDown"/>
+                    <include name="deleteAllBooks"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+<!-- Edge Test cases Cross browser -->
+    <test verbose="2" preserve-order="true" name="All test Cases edge">
+        <parameter name="browser" value="edge"></parameter>
+        <classes>
+            <class name="TestCases.AlertsTestCases.Alerts">
+                <methods>
+                    <include name="alertClick"/>
+                    <include name="alertMenuClick"/>
+                    <include name="alert"/>
+                    <include name="timeAlert"/>
+                    <include name="yesAlert"/>
+                    <include name="cancelAlert"/>
+                    <include name="yesPromt"/>
+                    <include name="cancelPromt"/>
+                </methods>
+            </class>
+            <class name="TestCases.AlertsTestCases.BrowserWindowAlerts">
+                <methods>
+                    <include name="openBrowserWindows"/>
+                    <include name="newTabBtn"/>
+                    <include name="newWindowBtn"/>
+                    <include name="newWindowMsgBtn"/>
+                </methods>
+            </class>
+            <class name="TestCases.Elements.Btn">
+                <methods>
+                    <include name="doubleClick"/>
+                    <include name="rightClick"/>
+                    <include name="click"/>
+                </methods>
+            </class>
+            <class name="TestCases.Elements.ClickLinkElement">
+                <methods>
+                    <include name="clicklink"/>
+                </methods>
+            </class>
+            <class name="TestCases.Elements.ElementsTestCases">
+                <methods>
+                    <include name="tc01"/>
+                    <include name="tc02"/>
+                </methods>
+            </class>
+            <class name="TestCases.Elements.RadioBtn">
+                <methods>
+                    <include name="no"/>
+                </methods>
+            </class>
+            <class name="TestCases.Elements.TextBox">
+                <methods>
+                    <include name="textBox"/>
+                </methods>
+            </class>
+            <class name="TestCases.Elements.UploadBtn">
+                <methods>
+                    <include name="uploadTestCase"/>
+                    <include name="download"/>
+                </methods>
+            </class>
+            <class name="TestCases.FirstTestCase">
+                <methods>
+                    <include name="testCase"/>
+                    <include name="testCase01"/>
+                </methods>
+            </class>
+            <class name="TestCases.Frames.FrameTestCases">
+                <methods>
+                    <include name="clickFrameBtn"/>
+                    <include name="switchToFrame1"/>
+                    <include name="switchToFrame2"/>
+                </methods>
+            </class>
+            <class name="TestCases.Frames.NestedFrames">
+                <methods>
+                    <include name="switchToFrame"/>
+                    <include name="switchToParentFrame"/>
+                </methods>
+            </class>
+            <class name="TestCases.ToolTips">
+                <methods>
+                    <include name="toolTip"/>
+                </methods>
+            </class>
+            <class name="TestCases.VWOLoginTestCase.VwoLoginTestCase">
+                <methods>
+                    <include name="loginTestCase"/>
+                    <include name="loginTextFail"/>
+                </methods>
+            </class>
+            <class name="TestCases.takeScreenshot">
+                <methods>
+                    <include name="takeScreenshot"/>
+                </methods>
+            </class>
+            <class name="TestCases.DataDrivenTestCase.DataDrivenTests">
+                <methods>
+                    <include name="tc01"/>
+                </methods>
+            </class>
+            <class name="TestCases.BookStore.BookStoreTestCases">
+                <methods>
+                    <include name="clickBookStoreApplication"/>
+                    <include name="clickLoginBtn"/>
+                    <include name="clickNewUser"/>
+                    <include name="validLogin"/>
+                    <include name="inValidLogin"/>
+                </methods>
+            </class>
+            <class name="TestCases.ShadowDomTestCases.ShadowDom">
+                <methods>
+                    <include name="shadowDom"/>
+                    <include name="nestedDom"/>
+                    <include name="multiNestedDom"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test  verbose="2" preserve-order="true" name="forms test edge">
+        <parameter name="browser" value="edge"></parameter>
         <classes>
             <class name="TestCases.Forms.FormTestCases">
                 <methods>
@@ -130,7 +287,8 @@
             </class>
         </classes>
     </test>
-    <test  verbose="2" preserve-order="true" name="Book Store Profile">
+    <test  verbose="2" preserve-order="true" name="Book Store Profile edge">
+        <parameter name="browser" value="edge"></parameter>
         <classes>
             <class name="TestCases.BookStore.BookStoreProfileTestCases">
                 <methods>
@@ -142,5 +300,4 @@
             </class>
         </classes>
     </test>
-
 </suite>
